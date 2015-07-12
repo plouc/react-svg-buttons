@@ -1,3 +1,11 @@
+/*
+ * This file is part of react-svg-buttons.
+ *
+ * (c) Raphaël Benitte
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
 * {
     box-sizing: border-box;
 }
@@ -8,7 +16,11 @@ body {
     padding: 80px 0;
 }
 h1, h2, h3 {
-    font-weight: 800;
+    font-weight: 100;
+}
+a {
+    color: inherit;
+    text-decoration: none;
 }
 #examples {
     margin: 20px;
@@ -27,8 +39,24 @@ h1, h2, h3 {
     top: 0;
 }
 .header h1 {
+    display: inline-block;
     margin: 0;
     padding: 0;
+}
+.header a {
+    float: right;
+    line-height: 32px;
+}
+.header a:after {
+    content: " ";
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    vertical-align: middle;
+    margin-left: 10px;
+    background-image: url('github-icon.png');
+    background-size: 32px 32px;
+    background-repeat: no-repeat;
 }
 .footer {
     bottom: 0;
