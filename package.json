@@ -25,11 +25,17 @@
     "react-tween-state": "^0.1.3"
   },
   "devDependencies": {
+    "babelify": "^6.1.3",
     "browserify": "^10.2.6",
     "chalk": "^1.1.0",
+    "del": "^1.2.0",
     "gulp": "^3.9.0",
     "gulp-babel": "^5.1.0",
-    "gulp-bump": "^0.3.1"
+    "gulp-bump": "^0.3.1",
+    "gulp-gh-pages": "^0.5.2",
+    "react": "^0.13.3",
+    "vinyl-source-stream": "^1.1.0",
+    "watchify": "^3.2.3"
   },
   "keywords": [
     "react",
