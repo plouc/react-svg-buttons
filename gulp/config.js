@@ -1,5 +1,7 @@
 module.exports = {
-    src: './src',
+    pkg:  require('./../package.json'),
+    src:  './src',
+    dist: './lib',
     examples: {
         src:        './examples/src',
         dist:       './examples/dist',
