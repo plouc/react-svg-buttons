@@ -15,13 +15,7 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _srcBackButtonJsx = require('./../../src/BackButton.jsx');
-
-var _srcBackButtonJsx2 = _interopRequireDefault(_srcBackButtonJsx);
-
-var _srcPlusButtonJsx = require('./../../src/PlusButton.jsx');
-
-var _srcPlusButtonJsx2 = _interopRequireDefault(_srcPlusButtonJsx);
+var _src = require('./../../src');
 
 var App = _react2['default'].createClass({
     displayName: 'App',
@@ -38,8 +32,8 @@ var App = _react2['default'].createClass({
             _react2['default'].createElement(
                 'div',
                 null,
-                _react2['default'].createElement(_srcBackButtonJsx2['default'], null),
-                _react2['default'].createElement(_srcPlusButtonJsx2['default'], null)
+                _react2['default'].createElement(_src.BackButton, null),
+                _react2['default'].createElement(_src.PlusButton, null)
             ),
             _react2['default'].createElement(
                 'h2',
@@ -49,10 +43,10 @@ var App = _react2['default'].createClass({
             _react2['default'].createElement(
                 'div',
                 null,
-                _react2['default'].createElement(_srcBackButtonJsx2['default'], { size: 64 }),
-                _react2['default'].createElement(_srcBackButtonJsx2['default'], { size: 36 }),
-                _react2['default'].createElement(_srcBackButtonJsx2['default'], { size: 64, thickness: 4 }),
-                _react2['default'].createElement(_srcBackButtonJsx2['default'], { size: 36, thickness: 1 })
+                _react2['default'].createElement(_src.BackButton, { size: 64 }),
+                _react2['default'].createElement(_src.BackButton, { size: 36 }),
+                _react2['default'].createElement(_src.BackButton, { size: 64, thickness: 4 }),
+                _react2['default'].createElement(_src.BackButton, { size: 36, thickness: 1 })
             )
         );
     }
@@ -60,7 +54,7 @@ var App = _react2['default'].createClass({
 
 _react2['default'].render(_react2['default'].createElement(App, null), document.getElementById('examples'));
 
-},{"./../../src/BackButton.jsx":"/Users/benitte/projects/react-svg-buttons/src/BackButton.jsx","./../../src/PlusButton.jsx":"/Users/benitte/projects/react-svg-buttons/src/PlusButton.jsx","react":"/Users/benitte/projects/react-svg-buttons/node_modules/react/react.js"}],"/Users/benitte/projects/react-svg-buttons/node_modules/browserify/node_modules/process/browser.js":[function(require,module,exports){
+},{"./../../src":"/Users/benitte/projects/react-svg-buttons/src/index.js","react":"/Users/benitte/projects/react-svg-buttons/node_modules/react/react.js"}],"/Users/benitte/projects/react-svg-buttons/node_modules/browserify/node_modules/process/browser.js":[function(require,module,exports){
 // shim for using process in browser
 
 var process = module.exports = {};
@@ -20413,11 +20407,9 @@ var _reactTweenState = require('react-tween-state');
 
 var _reactTweenState2 = _interopRequireDefault(_reactTweenState);
 
-var pathCommand = function pathCommand(instruction) {
-    return instruction.command + ' ' + instruction.x + ' ' + instruction.y;
-};
+var _pathHelper = require('./pathHelper');
 
-var computeValues = function computeValues(completion, props) {
+function computeValues(completion, props) {
     var size = props.size;
     var thickness = props.thickness;
 
@@ -20436,7 +20428,7 @@ var computeValues = function computeValues(completion, props) {
         rightPathEndX: radius * 0.4 * completion,
         rightPathEndY: radius * 0.7 + radius * -0.3 * completion
     };
-};
+}
 
 exports['default'] = _react2['default'].createClass({
     displayName: 'BackButton',
@@ -20510,16 +20502,19 @@ exports['default'] = _react2['default'].createClass({
         var rightPathEndX = values.rightPathEndX;
         var rightPathEndY = values.rightPathEndY;
 
-        var leftPathLine = [{ command: 'M', x: radius * -0.7, y: 0 }, { command: 'L', x: radius * 0.7, y: 0 }].map(pathCommand).join(' ');
+        var leftPathLine = (0, _pathHelper.pathCommands)([{ command: 'M', x: radius * -0.7, y: 0 }, { command: 'L', x: radius * 0.7, y: 0 }]);
 
-        var rightPathLine = [{ command: 'M', x: rightPathStartX, y: rightPathStartY }, { command: 'L', x: 0, y: 0 }, { command: 'L', x: rightPathEndX, y: rightPathEndY }].map(pathCommand).join(' ');
+        var rightPathLine = (0, _pathHelper.pathCommands)([{ command: 'M', x: rightPathStartX, y: rightPathStartY }, { command: 'L', x: 0, y: 0 }, { command: 'L', x: rightPathEndX, y: rightPathEndY }]);
 
         return _react2['default'].createElement(
             'span',
             { className: 'back_button' },
             _react2['default'].createElement(
                 'svg',
-                { width: size, height: size, xmlns: 'http://www.w3.org/svg/2000', onMouseEnter: this.onMouseEnter, onMouseLeave: this.onMouseLeave },
+                {
+                    width: size, height: size, xmlns: 'http://www.w3.org/svg/2000',
+                    onMouseEnter: this.onMouseEnter, onMouseLeave: this.onMouseLeave
+                },
                 _react2['default'].createElement(
                     'g',
                     { transform: 'translate(' + originX + ', ' + originY + ') rotate(' + circleRotation + ', 0, 0)' },
@@ -20531,18 +20526,12 @@ exports['default'] = _react2['default'].createClass({
                 _react2['default'].createElement(
                     'g',
                     { transform: 'translate(' + originX + ', ' + originY + ') rotate(' + leftPathRotation + ', 0, 0)' },
-                    _react2['default'].createElement('path', {
-                        fill: 'none', stroke: color, strokeWidth: thickness,
-                        d: leftPathLine
-                    })
+                    _react2['default'].createElement('path', { fill: 'none', stroke: color, strokeWidth: thickness, d: leftPathLine })
                 ),
                 _react2['default'].createElement(
                     'g',
                     { transform: 'translate(' + rightPathX + ', ' + originY + ') rotate(' + rightPathRotation + ', 0, 0)' },
-                    _react2['default'].createElement('path', {
-                        fill: 'none', stroke: color, strokeWidth: thickness,
-                        d: rightPathLine
-                    })
+                    _react2['default'].createElement('path', { fill: 'none', stroke: color, strokeWidth: thickness, d: rightPathLine })
                 )
             )
         );
@@ -20550,7 +20539,7 @@ exports['default'] = _react2['default'].createClass({
 });
 module.exports = exports['default'];
 
-},{"react":"/Users/benitte/projects/react-svg-buttons/node_modules/react/react.js","react-tween-state":"/Users/benitte/projects/react-svg-buttons/node_modules/react-tween-state/lib/index.js"}],"/Users/benitte/projects/react-svg-buttons/src/PlusButton.jsx":[function(require,module,exports){
+},{"./pathHelper":"/Users/benitte/projects/react-svg-buttons/src/pathHelper.js","react":"/Users/benitte/projects/react-svg-buttons/node_modules/react/react.js","react-tween-state":"/Users/benitte/projects/react-svg-buttons/node_modules/react-tween-state/lib/index.js"}],"/Users/benitte/projects/react-svg-buttons/src/PlusButton.jsx":[function(require,module,exports){
 /*
  * This file is part of react-svg-buttons.
  *
@@ -20575,11 +20564,9 @@ var _reactTweenState = require('react-tween-state');
 
 var _reactTweenState2 = _interopRequireDefault(_reactTweenState);
 
-var pathCommand = function pathCommand(instruction) {
-    return instruction.command + ' ' + instruction.x + ' ' + instruction.y;
-};
+var _pathHelper = require('./pathHelper');
 
-var computeValues = function computeValues(completion, props) {
+function computeValues(completion, props) {
     var size = props.size;
     var thickness = props.thickness;
 
@@ -20591,7 +20578,7 @@ var computeValues = function computeValues(completion, props) {
         circleRotation: -90 + 180 * completion,
         crossRotation: 90 * completion
     };
-};
+}
 
 exports['default'] = _react2['default'].createClass({
     displayName: 'PlusButton',
@@ -20660,14 +20647,17 @@ exports['default'] = _react2['default'].createClass({
         var circleRotation = values.circleRotation;
         var crossRotation = values.crossRotation;
 
-        var leftPathLine = [{ command: 'M', x: radius * -0.7, y: 0 }, { command: 'L', x: radius * 0.7, y: 0 }].map(pathCommand).join(' ');
+        var leftPathLine = (0, _pathHelper.pathCommands)([{ command: 'M', x: radius * -0.7, y: 0 }, { command: 'L', x: radius * 0.7, y: 0 }]);
 
-        var rightPathLine = [{ command: 'M', x: 0, y: radius * -0.7 }, { command: 'L', x: 0, y: radius * 0.7 }].map(pathCommand).join(' ');
+        var rightPathLine = (0, _pathHelper.pathCommands)([{ command: 'M', x: 0, y: radius * -0.7 }, { command: 'L', x: 0, y: radius * 0.7 }]);
 
         var sparks = [0, 1, 2, 3].map(function (index) {
             return _react2['default'].createElement(
                 'g',
-                { transform: 'translate(' + originX + ', ' + originY + ') rotate(' + (index * 90 + 45) + ', 0, 0)' },
+                {
+                    key: 'spark_' + index,
+                    transform: 'translate(' + originX + ', ' + originY + ') rotate(' + (index * 90 + 45) + ', 0, 0)'
+                },
                 _react2['default'].createElement('line', {
                     fill: 'none', stroke: color, strokeWidth: thickness,
                     x1: '0', y1: radius * -0.6 * completion,
@@ -20681,7 +20671,10 @@ exports['default'] = _react2['default'].createClass({
             { className: 'plus_button' },
             _react2['default'].createElement(
                 'svg',
-                { width: size, height: size, xmlns: 'http://www.w3.org/svg/2000', onMouseEnter: this.onMouseEnter, onMouseLeave: this.onMouseLeave },
+                {
+                    width: size, height: size, xmlns: 'http://www.w3.org/svg/2000',
+                    onMouseEnter: this.onMouseEnter, onMouseLeave: this.onMouseLeave
+                },
                 _react2['default'].createElement(
                     'g',
                     { transform: 'translate(' + originX + ', ' + originY + ') rotate(' + circleRotation + ', 0, 0)' },
@@ -20693,14 +20686,8 @@ exports['default'] = _react2['default'].createClass({
                 _react2['default'].createElement(
                     'g',
                     { transform: 'translate(' + originX + ', ' + originY + ') rotate(' + crossRotation + ', 0, 0)' },
-                    _react2['default'].createElement('path', {
-                        fill: 'none', stroke: color, strokeWidth: thickness,
-                        d: leftPathLine
-                    }),
-                    _react2['default'].createElement('path', {
-                        fill: 'none', stroke: color, strokeWidth: thickness,
-                        d: rightPathLine
-                    })
+                    _react2['default'].createElement('path', { fill: 'none', stroke: color, strokeWidth: thickness, d: leftPathLine }),
+                    _react2['default'].createElement('path', { fill: 'none', stroke: color, strokeWidth: thickness, d: rightPathLine })
                 ),
                 sparks
             )
@@ -20709,4 +20696,54 @@ exports['default'] = _react2['default'].createClass({
 });
 module.exports = exports['default'];
 
-},{"react":"/Users/benitte/projects/react-svg-buttons/node_modules/react/react.js","react-tween-state":"/Users/benitte/projects/react-svg-buttons/node_modules/react-tween-state/lib/index.js"}]},{},["/Users/benitte/projects/react-svg-buttons/examples/src/Examples.jsx"]);
+},{"./pathHelper":"/Users/benitte/projects/react-svg-buttons/src/pathHelper.js","react":"/Users/benitte/projects/react-svg-buttons/node_modules/react/react.js","react-tween-state":"/Users/benitte/projects/react-svg-buttons/node_modules/react-tween-state/lib/index.js"}],"/Users/benitte/projects/react-svg-buttons/src/index.js":[function(require,module,exports){
+/*
+ * This file is part of react-svg-buttons.
+ *
+ * (c) Raphaël Benitte
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+'use strict';
+
+Object.defineProperty(exports, '__esModule', {
+  value: true
+});
+
+function _interopRequire(obj) { return obj && obj.__esModule ? obj['default'] : obj; }
+
+var _BackButtonJsx = require('./BackButton.jsx');
+
+exports.BackButton = _interopRequire(_BackButtonJsx);
+
+var _PlusButtonJsx = require('./PlusButton.jsx');
+
+exports.PlusButton = _interopRequire(_PlusButtonJsx);
+
+},{"./BackButton.jsx":"/Users/benitte/projects/react-svg-buttons/src/BackButton.jsx","./PlusButton.jsx":"/Users/benitte/projects/react-svg-buttons/src/PlusButton.jsx"}],"/Users/benitte/projects/react-svg-buttons/src/pathHelper.js":[function(require,module,exports){
+/*
+ * This file is part of react-svg-buttons.
+ *
+ * (c) Raphaël Benitte
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+'use strict';
+
+Object.defineProperty(exports, '__esModule', {
+    value: true
+});
+exports.pathCommand = pathCommand;
+exports.pathCommands = pathCommands;
+
+function pathCommand(instruction) {
+    return instruction.command + ' ' + instruction.x + ' ' + instruction.y;
+}
+
+function pathCommands(instructions) {
+    return instructions.map(pathCommand).join(' ');
+}
+
+},{}]},{},["/Users/benitte/projects/react-svg-buttons/examples/src/Examples.jsx"]);
