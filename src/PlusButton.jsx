@@ -8,14 +8,10 @@
  */
 import React, { PropTypes }                       from 'react';
 import tweenState, { easingTypes, stackBehavior } from 'react-tween-state';
+import { pathCommands }                           from './pathHelper';
 
 
-const pathCommand = function pathCommand(instruction) {
-    return `${ instruction.command } ${ instruction.x } ${ instruction.y }`;
-};
-
-
-const computeValues = function computeValues(completion, props) {
+function computeValues(completion, props) {
     let { size, thickness } = props;
 
     let radius        = size / 2 - thickness;
@@ -26,7 +22,7 @@ const computeValues = function computeValues(completion, props) {
         circleRotation:    -90 + 180 * completion,
         crossRotation:     90 * completion
     };
-};
+}
 
 
 export default React.createClass({
@@ -94,19 +90,22 @@ export default React.createClass({
             crossRotation
         } = values;
 
-        let leftPathLine = [
+        let leftPathLine = pathCommands([
             { command: 'M', x: radius * -0.7, y: 0 },
             { command: 'L', x: radius *  0.7, y: 0 }
-        ].map(pathCommand).join(' ');
+        ]);
 
-        let rightPathLine = [
+        let rightPathLine = pathCommands([
             { command: 'M', x: 0, y: radius * -0.7 },
             { command: 'L', x: 0, y: radius *  0.7 }
-        ].map(pathCommand).join(' ');
+        ]);
 
         let sparks = [0, 1, 2, 3].map(index => {
             return (
-                <g transform={`translate(${ originX }, ${ originY }) rotate(${ index * 90 + 45 }, 0, 0)`}>
+                <g
+                    key={`spark_${index}`}
+                    transform={`translate(${ originX }, ${ originY }) rotate(${ index * 90 + 45 }, 0, 0)`}
+                >
                     <line
                         fill="none" stroke={color} strokeWidth={thickness}
                         x1="0" y1={radius * -0.6 * completion}
@@ -118,7 +117,10 @@ export default React.createClass({
 
         return (
             <span className="plus_button">
-                <svg width={size} height={size} xmlns="http://www.w3.org/svg/2000" onMouseEnter={this.onMouseEnter} onMouseLeave={this.onMouseLeave}>
+                <svg
+                    width={size} height={size} xmlns="http://www.w3.org/svg/2000"
+                    onMouseEnter={this.onMouseEnter} onMouseLeave={this.onMouseLeave}
+                >
                     <g transform={`translate(${ originX }, ${ originY }) rotate(${ circleRotation }, 0, 0)`}>
                         <circle
                             fill="none" stroke={color} strokeWidth={thickness} r={radius}
@@ -126,14 +128,8 @@ export default React.createClass({
                         />
                     </g>
                     <g transform={`translate(${ originX }, ${ originY }) rotate(${ crossRotation }, 0, 0)`}>
-                        <path
-                            fill="none" stroke={color} strokeWidth={thickness}
-                            d={leftPathLine}
-                        />
-                        <path
-                            fill="none" stroke={color} strokeWidth={thickness}
-                            d={rightPathLine}
-                        />
+                        <path fill="none" stroke={color} strokeWidth={thickness} d={leftPathLine} />
+                        <path fill="none" stroke={color} strokeWidth={thickness} d={rightPathLine} />
                     </g>
                     {sparks}
                 </svg>
