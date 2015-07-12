@@ -1,5 +1,6 @@
 # React SVG buttons
 
+[demo](http://plouc.github.io/react-svg-buttons/)
 
 ## License
 
