@@ -53,7 +53,7 @@ gulp.task('examples:build', ['examples:files'], function () {
 });
 
 
-gulp.task('examples:pub', ['examples:build'], function () {
+gulp.task('examples:publish', ['examples:build'], function () {
     return gulp
         .src(path.join(config.examples.dist, '**/*'))
         .pipe(ghPages())

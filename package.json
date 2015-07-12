@@ -20,9 +20,7 @@
     "url": "https://github.com/plouc/react-svg-buttons/issues"
   },
   "scripts": {
-    "bump": "gulp bump",
-    "bump:major": "gulp bump:major",
-    "bump:minor": "gulp bump:minor"
+    "prepublish": "gulp lib:clean && gulp lib:build"
   },
   "dependencies": {
     "react-tween-state": "^0.1.3"
