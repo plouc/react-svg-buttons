@@ -2,3 +2,5 @@ examples
 src
 gulp
 gulpfile.js
+.publish
+.idea
