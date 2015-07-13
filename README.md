@@ -2,12 +2,37 @@
 
 [![Version][npm-image]][npm-url]
 
-[demo](http://plouc.github.io/react-svg-buttons/)
+
+This package contains a small set of animated svg icons to be used as button.
+Take a look at the [demo](http://plouc.github.io/react-svg-buttons/).
+
 
 ## Installation
 
 ```
 npm install --save react-svg-buttons
+```
+
+## Usage
+
+```javascript
+import { React }                             from 'react';
+import { BackButton, PlusButton, NavButton } from 'react-svg-buttons`;
+
+const Test = React.createClass({
+    displayName: 'Test',
+    render() {
+        return (
+            <div>
+                <BackButton/>
+                <PlusButton/>
+                <NavButton/>
+            </div>
+        );
+    }
+});
+
+React.render(<Test/>, document.getElementById('test'));
 ```
 
 ## License
