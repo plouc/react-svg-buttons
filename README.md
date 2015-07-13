@@ -14,5 +14,5 @@ npm install --save react-svg-buttons
 
 MIT. Copyright (c) 2015 Raphaël Benitte.
 
-[npm-image]: https://img.shields.io/npm/v/react-svg-buttons?style=flat-square
+[npm-image]: https://img.shields.io/npm/v/react-svg-buttons.svg?style=flat-square
 [npm-url]:   https://www.npmjs.org/package/react-svg-buttons
