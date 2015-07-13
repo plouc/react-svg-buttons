@@ -7,6 +7,7 @@ module.exports = {
         dist:       './examples/dist',
         scripts:    ['Examples.jsx'],
         scriptName: 'examples.js',
+        stylesFile: 'examples.styl',
         files:      ['index.html', 'examples.css', 'github-icon.png']
     }
 };

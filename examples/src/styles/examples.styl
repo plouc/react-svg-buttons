@@ -1,0 +1,156 @@
+/*
+ * This file is part of react-svg-buttons.
+ *
+ * (c) Raphaël Benitte
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+@require 'helpers.styl'
+@require 'variables.styl'
+@require 'switch.styl'
+@require 'select.styl'
+@require 'structure.styl'
+
+* {
+    box-sizing: border-box;
+}
+
+body
+  font-family main-font-family
+  font-size   16px
+
+  margin  0
+  padding 0
+
+  background main-bg-color
+  color      main-txt-color
+
+h1, h2, h3
+  font-weight 100
+
+a
+  color inherit
+  text-decoration none
+
+.header,
+.footer
+  background alt-bg-color
+  color      alt-txt-color
+
+.header
+  padding 30px 20px
+  &_icons
+    text-align center
+    margin-top 20px
+    > *
+      cursor pointer
+      margin-left 20px
+      &:first-child
+        margin-left 0
+
+  h1
+    font-size   28px
+    font-weight 400
+    font-family title-font-family
+    text-align center
+    margin  0
+    padding 0
+    text-transform uppercase
+
+.header a {
+    float: right;
+    line-height: 32px;
+}
+.header a:after {
+    content: " ";
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    vertical-align: middle;
+    margin-left: 10px;
+    background-image: url('../github-icon.png');
+    background-size: 32px 32px;
+    background-repeat: no-repeat;
+}
+.footer
+  font-size 14px
+  padding 15px 20px
+  position fixed
+  bottom 0
+  left   0
+  text-align center
+
+.sub_header
+  background sub-header-bg-color
+  color      sub-header-txt-color
+  padding    15px 0
+  box-shadow 0 0 2px rgba(0, 0, 0, 0.75)
+  margin-bottom 30px
+  &_install
+    float left
+    font-family code-font-family
+  &_github
+    float right
+
+.cf:before,
+.cf:after {
+    content: '';
+    display: table;
+}
+.cf:after {
+    clear: both;
+}
+.settings,
+.preview,
+.code {
+    float: left;
+    width: 32%;
+    margin-left: 2%;
+}
+.settings {
+    margin-left: 0;
+}
+.preview {
+    text-align: center;
+}
+.form_row {
+    margin-bottom: 15px;
+}
+label {
+    width: 50%;
+    float: left;
+}
+.section_title
+  font-family title-font-family
+  font-weight 400
+  border-bottom 1px solid darken(alt-bg-color, 25)
+  color alt-txt-color
+  text-align left
+  font-size 18px
+  text-transform uppercase
+  padding-bottom 10px
+  margin-bottom 20px
+
+input[type="text"],
+input[type="number"]
+  font-family main-font-family
+  padding 7px 12px
+  font-size 16px
+  width 50%
+  float left
+  border none
+  background alt-bg-color
+  color      alt-txt-color
+  border-radius 2px
+
+pre
+  margin 0
+  text-align left
+  padding 15px 20px
+  font-size 16px
+  line-height 24px
+  font-family code-font-family
+  white-space pre
+  background #1a0a14
+  color #dd6e78

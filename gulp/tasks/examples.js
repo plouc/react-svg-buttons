@@ -14,12 +14,13 @@ var del        = require('del');
 var browserify = require('browserify');
 var babelify   = require('babelify');
 var source     = require('vinyl-source-stream');
+var stylus     = require('gulp-stylus');
 
 
 function getBundler(isDev) {
     var bundler = browserify({
         entries:      config.examples.scripts.map(function (script) {
-            return path.join(config.examples.src, script);
+            return path.join(config.examples.src, 'js', script);
         }),
         extensions:   ['.js', '.jsx'],
         debug:        isDev,
@@ -35,6 +36,7 @@ function getBundler(isDev) {
     return bundler;
 }
 
+
 gulp.task('examples:files', function () {
     return gulp.src(config.examples.files, {
             cwd:  config.examples.src,
@@ -44,12 +46,27 @@ gulp.task('examples:files', function () {
     ;
 });
 
-gulp.task('examples:build', ['examples:files'], function () {
+
+gulp.task('examples:build', ['examples:files', 'examples:styles'], function () {
     return getBundler(false)
         .bundle()
-        .pipe(source(config.examples.scriptName))
-        .pipe(gulp.dest(config.examples.dist))
+        .pipe(source(path.join(config.examples.scriptName)))
+        .pipe(gulp.dest(path.join(config.examples.dist, 'js')))
     ;
+});
+
+
+gulp.task('examples:styles', function () {
+    return gulp
+        .src(path.join(config.examples.src, 'styles', config.examples.stylesFile))
+        .pipe(stylus())
+        .pipe(gulp.dest(path.join(config.examples.dist, 'css')))
+    ;
+});
+
+
+gulp.task('examples:watch', function () {
+
 });
 
 
