@@ -23,30 +23,330 @@ var App = _react2['default'].createClass({
     render: function render() {
         return _react2['default'].createElement(
             'div',
-            null,
+            { className: 'section' },
             _react2['default'].createElement(
-                'h2',
-                null,
-                'Default configuration'
+                'div',
+                { className: 'unit' },
+                _react2['default'].createElement(
+                    'pre',
+                    null,
+                    _react2['default'].createElement(
+                        'code',
+                        null,
+                        '<BackButton/>'
+                    )
+                ),
+                _react2['default'].createElement(
+                    'div',
+                    { className: 'preview' },
+                    _react2['default'].createElement(_src.BackButton, null)
+                )
             ),
             _react2['default'].createElement(
                 'div',
-                null,
-                _react2['default'].createElement(_src.BackButton, null),
-                _react2['default'].createElement(_src.PlusButton, null)
-            ),
-            _react2['default'].createElement(
-                'h2',
-                null,
-                'Size varations'
+                { className: 'unit' },
+                _react2['default'].createElement(
+                    'pre',
+                    null,
+                    _react2['default'].createElement(
+                        'code',
+                        null,
+                        '<PlusButton/>'
+                    )
+                ),
+                _react2['default'].createElement(
+                    'div',
+                    { className: 'preview' },
+                    _react2['default'].createElement(_src.PlusButton, null)
+                )
             ),
             _react2['default'].createElement(
                 'div',
-                null,
-                _react2['default'].createElement(_src.BackButton, { size: 64 }),
-                _react2['default'].createElement(_src.BackButton, { size: 36 }),
-                _react2['default'].createElement(_src.BackButton, { size: 64, thickness: 4 }),
-                _react2['default'].createElement(_src.BackButton, { size: 36, thickness: 1 })
+                { className: 'unit' },
+                _react2['default'].createElement(
+                    'pre',
+                    null,
+                    _react2['default'].createElement(
+                        'code',
+                        null,
+                        '<NavButton/>'
+                    )
+                ),
+                _react2['default'].createElement(
+                    'div',
+                    { className: 'preview' },
+                    _react2['default'].createElement(_src.NavButton, null)
+                )
+            ),
+            _react2['default'].createElement(
+                'div',
+                { className: 'unit' },
+                _react2['default'].createElement(
+                    'pre',
+                    null,
+                    _react2['default'].createElement(
+                        'code',
+                        null,
+                        '<BackButton size={36} thickness={1}/>'
+                    )
+                ),
+                _react2['default'].createElement(
+                    'div',
+                    { className: 'preview' },
+                    _react2['default'].createElement(_src.BackButton, { size: 36, thickness: 1 })
+                )
+            ),
+            _react2['default'].createElement(
+                'div',
+                { className: 'unit' },
+                _react2['default'].createElement(
+                    'pre',
+                    null,
+                    _react2['default'].createElement(
+                        'code',
+                        null,
+                        '<PlusButton size={64} thickness={4}/>'
+                    )
+                ),
+                _react2['default'].createElement(
+                    'div',
+                    { className: 'preview' },
+                    _react2['default'].createElement(_src.PlusButton, { size: 64, thickness: 4 })
+                )
+            ),
+            _react2['default'].createElement(
+                'div',
+                { className: 'unit' },
+                _react2['default'].createElement(
+                    'pre',
+                    null,
+                    _react2['default'].createElement(
+                        'code',
+                        null,
+                        '<NavButton thickness={3}/>'
+                    )
+                ),
+                _react2['default'].createElement(
+                    'div',
+                    { className: 'preview' },
+                    _react2['default'].createElement(_src.NavButton, { thickness: 3 })
+                )
+            ),
+            _react2['default'].createElement(
+                'div',
+                { className: 'unit' },
+                _react2['default'].createElement(
+                    'pre',
+                    null,
+                    _react2['default'].createElement(
+                        'code',
+                        null,
+                        '<BackButton outline={false}/>'
+                    )
+                ),
+                _react2['default'].createElement(
+                    'div',
+                    { className: 'preview' },
+                    _react2['default'].createElement(_src.BackButton, { outline: false })
+                )
+            ),
+            _react2['default'].createElement(
+                'div',
+                { className: 'unit' },
+                _react2['default'].createElement(
+                    'pre',
+                    null,
+                    _react2['default'].createElement(
+                        'code',
+                        null,
+                        '<PlusButton outline={false}/>'
+                    )
+                ),
+                _react2['default'].createElement(
+                    'div',
+                    { className: 'preview' },
+                    _react2['default'].createElement(_src.PlusButton, { outline: false })
+                )
+            ),
+            _react2['default'].createElement(
+                'div',
+                { className: 'unit' },
+                _react2['default'].createElement(
+                    'pre',
+                    null,
+                    _react2['default'].createElement(
+                        'code',
+                        null,
+                        '<NavButton outline={false}/>'
+                    )
+                ),
+                _react2['default'].createElement(
+                    'div',
+                    { className: 'preview' },
+                    _react2['default'].createElement(_src.NavButton, { outline: false })
+                )
+            ),
+            _react2['default'].createElement(
+                'div',
+                { className: 'unit' },
+                _react2['default'].createElement(
+                    'pre',
+                    null,
+                    _react2['default'].createElement(
+                        'code',
+                        null,
+                        '<BackButton transitionDuration={4000}/>'
+                    )
+                ),
+                _react2['default'].createElement(
+                    'div',
+                    { className: 'preview' },
+                    _react2['default'].createElement(_src.BackButton, { transitionDuration: 4000 })
+                )
+            ),
+            _react2['default'].createElement(
+                'div',
+                { className: 'unit' },
+                _react2['default'].createElement(
+                    'pre',
+                    null,
+                    _react2['default'].createElement(
+                        'code',
+                        null,
+                        '<PlusButton transitionDuration={4000}/>'
+                    )
+                ),
+                _react2['default'].createElement(
+                    'div',
+                    { className: 'preview' },
+                    _react2['default'].createElement(_src.PlusButton, { transitionDuration: 4000 })
+                )
+            ),
+            _react2['default'].createElement(
+                'div',
+                { className: 'unit' },
+                _react2['default'].createElement(
+                    'pre',
+                    null,
+                    _react2['default'].createElement(
+                        'code',
+                        null,
+                        '<NavButton transitionDuration={4000}/>'
+                    )
+                ),
+                _react2['default'].createElement(
+                    'div',
+                    { className: 'preview' },
+                    _react2['default'].createElement(_src.NavButton, { transitionDuration: 4000 })
+                )
+            ),
+            _react2['default'].createElement(
+                'div',
+                { className: 'unit' },
+                _react2['default'].createElement(
+                    'pre',
+                    null,
+                    _react2['default'].createElement(
+                        'code',
+                        null,
+                        '<BackButton transitionDuration={400}/>'
+                    )
+                ),
+                _react2['default'].createElement(
+                    'div',
+                    { className: 'preview' },
+                    _react2['default'].createElement(_src.BackButton, { transitionDuration: 400 })
+                )
+            ),
+            _react2['default'].createElement(
+                'div',
+                { className: 'unit' },
+                _react2['default'].createElement(
+                    'pre',
+                    null,
+                    _react2['default'].createElement(
+                        'code',
+                        null,
+                        '<PlusButton transitionDuration={400}/>'
+                    )
+                ),
+                _react2['default'].createElement(
+                    'div',
+                    { className: 'preview' },
+                    _react2['default'].createElement(_src.PlusButton, { transitionDuration: 400 })
+                )
+            ),
+            _react2['default'].createElement(
+                'div',
+                { className: 'unit' },
+                _react2['default'].createElement(
+                    'pre',
+                    null,
+                    _react2['default'].createElement(
+                        'code',
+                        null,
+                        '<NavButton transitionDuration={400}/>'
+                    )
+                ),
+                _react2['default'].createElement(
+                    'div',
+                    { className: 'preview' },
+                    _react2['default'].createElement(_src.NavButton, { transitionDuration: 400 })
+                )
+            ),
+            _react2['default'].createElement(
+                'div',
+                { className: 'unit' },
+                _react2['default'].createElement(
+                    'pre',
+                    null,
+                    _react2['default'].createElement(
+                        'code',
+                        null,
+                        '<BackButton color="#C84A31"/>'
+                    )
+                ),
+                _react2['default'].createElement(
+                    'div',
+                    { className: 'preview' },
+                    _react2['default'].createElement(_src.BackButton, { color: '#C84A31' })
+                )
+            ),
+            _react2['default'].createElement(
+                'div',
+                { className: 'unit' },
+                _react2['default'].createElement(
+                    'pre',
+                    null,
+                    _react2['default'].createElement(
+                        'code',
+                        null,
+                        '<PlusButton color="#4CBA86"/>'
+                    )
+                ),
+                _react2['default'].createElement(
+                    'div',
+                    { className: 'preview' },
+                    _react2['default'].createElement(_src.PlusButton, { color: '#4CBA86' })
+                )
+            ),
+            _react2['default'].createElement(
+                'div',
+                { className: 'unit' },
+                _react2['default'].createElement(
+                    'pre',
+                    null,
+                    _react2['default'].createElement(
+                        'code',
+                        null,
+                        '<NavButton color="#6EB4E2"/>'
+                    )
+                ),
+                _react2['default'].createElement(
+                    'div',
+                    { className: 'preview' },
+                    _react2['default'].createElement(_src.NavButton, { color: '#6EB4E2' })
+                )
             )
         );
     }
@@ -20437,7 +20737,8 @@ exports['default'] = _react2['default'].createClass({
         size: _react.PropTypes.number.isRequired,
         thickness: _react.PropTypes.number.isRequired,
         color: _react.PropTypes.string.isRequired,
-        transitionDuration: _react.PropTypes.number.isRequired
+        transitionDuration: _react.PropTypes.number.isRequired,
+        outline: _react.PropTypes.bool.isRequired
     },
 
     mixins: [_reactTweenState2['default'].Mixin],
@@ -20447,7 +20748,8 @@ exports['default'] = _react2['default'].createClass({
             size: 52,
             thickness: 2,
             color: '#000',
-            transitionDuration: 1600
+            transitionDuration: 1600,
+            outline: true
         };
     },
 
@@ -20484,6 +20786,7 @@ exports['default'] = _react2['default'].createClass({
         var size = _props.size;
         var thickness = _props.thickness;
         var color = _props.color;
+        var outline = _props.outline;
 
         var originX = size / 2;
         var originY = size / 2;
@@ -20506,6 +20809,18 @@ exports['default'] = _react2['default'].createClass({
 
         var rightPathLine = (0, _pathHelper.pathCommands)([{ command: 'M', x: rightPathStartX, y: rightPathStartY }, { command: 'L', x: 0, y: 0 }, { command: 'L', x: rightPathEndX, y: rightPathEndY }]);
 
+        var circle = null;
+        if (outline === true) {
+            circle = _react2['default'].createElement(
+                'g',
+                { transform: 'translate(' + originX + ', ' + originY + ') rotate(' + circleRotation + ', 0, 0)' },
+                _react2['default'].createElement('circle', {
+                    fill: 'none', stroke: color, strokeWidth: thickness, r: radius,
+                    style: { strokeDasharray: circumference, strokeDashoffset: '' + circleDashOffset }
+                })
+            );
+        }
+
         return _react2['default'].createElement(
             'span',
             { className: 'back_button' },
@@ -20515,14 +20830,7 @@ exports['default'] = _react2['default'].createClass({
                     width: size, height: size, xmlns: 'http://www.w3.org/svg/2000',
                     onMouseEnter: this.onMouseEnter, onMouseLeave: this.onMouseLeave
                 },
-                _react2['default'].createElement(
-                    'g',
-                    { transform: 'translate(' + originX + ', ' + originY + ') rotate(' + circleRotation + ', 0, 0)' },
-                    _react2['default'].createElement('circle', {
-                        fill: 'none', stroke: color, strokeWidth: thickness, r: radius,
-                        style: { strokeDasharray: circumference, strokeDashoffset: '' + circleDashOffset }
-                    })
-                ),
+                circle,
                 _react2['default'].createElement(
                     'g',
                     { transform: 'translate(' + originX + ', ' + originY + ') rotate(' + leftPathRotation + ', 0, 0)' },
@@ -20532,6 +20840,178 @@ exports['default'] = _react2['default'].createClass({
                     'g',
                     { transform: 'translate(' + rightPathX + ', ' + originY + ') rotate(' + rightPathRotation + ', 0, 0)' },
                     _react2['default'].createElement('path', { fill: 'none', stroke: color, strokeWidth: thickness, d: rightPathLine })
+                )
+            )
+        );
+    }
+});
+module.exports = exports['default'];
+
+},{"./pathHelper":"/Users/benitte/projects/react-svg-buttons/src/pathHelper.js","react":"/Users/benitte/projects/react-svg-buttons/node_modules/react/react.js","react-tween-state":"/Users/benitte/projects/react-svg-buttons/node_modules/react-tween-state/lib/index.js"}],"/Users/benitte/projects/react-svg-buttons/src/NavButton.jsx":[function(require,module,exports){
+/*
+ * This file is part of react-svg-buttons.
+ *
+ * (c) Raphaël Benitte
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+'use strict';
+
+Object.defineProperty(exports, '__esModule', {
+    value: true
+});
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactTweenState = require('react-tween-state');
+
+var _reactTweenState2 = _interopRequireDefault(_reactTweenState);
+
+var _pathHelper = require('./pathHelper');
+
+function computeValues(completion, props) {
+    var size = props.size;
+    var thickness = props.thickness;
+
+    var originX = size / 2;
+    var originY = size / 2;
+    var radius = size / 2 - thickness;
+    var circumference = 2 * radius * Math.PI;
+
+    return {
+        circleDashOffset: circumference * completion,
+        circleRotation: -90 + 180 * completion,
+        firstBarY: originY - radius * 0.3 * (1 - completion),
+        firstBarRotation: 45 * completion,
+        secondBarMidLength: radius * 0.5 - completion * radius * 0.5,
+        thirdBarY: originY + radius * 0.3 * (1 - completion),
+        thirdBarRotation: -45 * completion,
+        barMidLength: radius * 0.5 + completion * radius * 0.2
+    };
+}
+
+exports['default'] = _react2['default'].createClass({
+    displayName: 'NavButton',
+
+    propTypes: {
+        size: _react.PropTypes.number.isRequired,
+        thickness: _react.PropTypes.number.isRequired,
+        color: _react.PropTypes.string.isRequired,
+        transitionDuration: _react.PropTypes.number.isRequired,
+        outline: _react.PropTypes.bool.isRequired
+    },
+
+    mixins: [_reactTweenState2['default'].Mixin],
+
+    getDefaultProps: function getDefaultProps() {
+        return {
+            size: 52,
+            thickness: 2,
+            color: '#000',
+            transitionDuration: 1600,
+            outline: true
+        };
+    },
+
+    getInitialState: function getInitialState() {
+        return {
+            completion: 0
+        };
+    },
+
+    onMouseEnter: function onMouseEnter() {
+        var transitionDuration = this.props.transitionDuration;
+
+        this.tweenState('completion', {
+            easing: _reactTweenState.easingTypes.easeOutElastic,
+            stackBehavior: _reactTweenState.stackBehavior.ADDITIVE,
+            duration: transitionDuration,
+            endValue: 1
+        });
+    },
+
+    onMouseLeave: function onMouseLeave() {
+        var transitionDuration = this.props.transitionDuration;
+
+        this.tweenState('completion', {
+            easing: _reactTweenState.easingTypes.easeInQuad,
+            stackBehavior: _reactTweenState.stackBehavior.ADDITIVE,
+            duration: transitionDuration / 8,
+            endValue: 0
+        });
+    },
+
+    render: function render() {
+        var _props = this.props;
+        var size = _props.size;
+        var thickness = _props.thickness;
+        var color = _props.color;
+        var outline = _props.outline;
+
+        var originX = size / 2;
+        var originY = size / 2;
+        var radius = size / 2 - thickness;
+        var circumference = 2 * radius * Math.PI;
+
+        var completion = this.getTweeningValue('completion');
+        var values = computeValues(completion, this.props);
+
+        var circleDashOffset = values.circleDashOffset;
+        var circleRotation = values.circleRotation;
+        var firstBarY = values.firstBarY;
+        var thirdBarY = values.thirdBarY;
+        var barMidLength = values.barMidLength;
+        var secondBarMidLength = values.secondBarMidLength;
+        var firstBarRotation = values.firstBarRotation;
+        var thirdBarRotation = values.thirdBarRotation;
+
+        var firstBarLine = (0, _pathHelper.pathCommands)([{ command: 'M', x: -barMidLength, y: 0 }, { command: 'L', x: barMidLength, y: 0 }]);
+
+        var secondBarLine = (0, _pathHelper.pathCommands)([{ command: 'M', x: -secondBarMidLength, y: 0 }, { command: 'L', x: secondBarMidLength, y: 0 }]);
+
+        var thirdBarLine = (0, _pathHelper.pathCommands)([{ command: 'M', x: -barMidLength, y: 0 }, { command: 'L', x: barMidLength, y: 0 }]);
+
+        var circle = null;
+        if (outline === true) {
+            circle = _react2['default'].createElement(
+                'g',
+                { transform: 'translate(' + originX + ', ' + originY + ') rotate(' + circleRotation + ', 0, 0)' },
+                _react2['default'].createElement('circle', {
+                    fill: 'none', stroke: color, strokeWidth: thickness, r: radius,
+                    style: { strokeDasharray: circumference, strokeDashoffset: '' + circleDashOffset }
+                })
+            );
+        }
+
+        return _react2['default'].createElement(
+            'span',
+            { className: 'plus_button' },
+            _react2['default'].createElement(
+                'svg',
+                {
+                    width: size, height: size, xmlns: 'http://www.w3.org/svg/2000',
+                    onMouseEnter: this.onMouseEnter, onMouseLeave: this.onMouseLeave
+                },
+                circle,
+                _react2['default'].createElement(
+                    'g',
+                    { transform: 'translate(' + originX + ', ' + firstBarY + ') rotate(' + firstBarRotation + ', 0, 0)' },
+                    _react2['default'].createElement('path', { fill: 'none', stroke: color, strokeWidth: thickness, d: firstBarLine })
+                ),
+                _react2['default'].createElement(
+                    'g',
+                    { transform: 'translate(' + originX + ', ' + originY + ') rotate(0, 0, 0)' },
+                    _react2['default'].createElement('path', { fill: 'none', stroke: color, strokeWidth: thickness, d: secondBarLine })
+                ),
+                _react2['default'].createElement(
+                    'g',
+                    { transform: 'translate(' + originX + ', ' + thirdBarY + ') rotate(' + thirdBarRotation + ', 0, 0)' },
+                    _react2['default'].createElement('path', { fill: 'none', stroke: color, strokeWidth: thickness, d: thirdBarLine })
                 )
             )
         );
@@ -20587,7 +21067,8 @@ exports['default'] = _react2['default'].createClass({
         size: _react.PropTypes.number.isRequired,
         thickness: _react.PropTypes.number.isRequired,
         color: _react.PropTypes.string.isRequired,
-        transitionDuration: _react.PropTypes.number.isRequired
+        transitionDuration: _react.PropTypes.number.isRequired,
+        outline: _react.PropTypes.bool.isRequired
     },
 
     mixins: [_reactTweenState2['default'].Mixin],
@@ -20597,7 +21078,8 @@ exports['default'] = _react2['default'].createClass({
             size: 52,
             thickness: 2,
             color: '#000',
-            transitionDuration: 1600
+            transitionDuration: 1600,
+            outline: true
         };
     },
 
@@ -20634,6 +21116,7 @@ exports['default'] = _react2['default'].createClass({
         var size = _props.size;
         var thickness = _props.thickness;
         var color = _props.color;
+        var outline = _props.outline;
 
         var originX = size / 2;
         var originY = size / 2;
@@ -20666,6 +21149,18 @@ exports['default'] = _react2['default'].createClass({
             );
         });
 
+        var circle = null;
+        if (outline === true) {
+            circle = _react2['default'].createElement(
+                'g',
+                { transform: 'translate(' + originX + ', ' + originY + ') rotate(' + circleRotation + ', 0, 0)' },
+                _react2['default'].createElement('circle', {
+                    fill: 'none', stroke: color, strokeWidth: thickness, r: radius,
+                    style: { strokeDasharray: circumference, strokeDashoffset: '' + circleDashOffset }
+                })
+            );
+        }
+
         return _react2['default'].createElement(
             'span',
             { className: 'plus_button' },
@@ -20675,14 +21170,7 @@ exports['default'] = _react2['default'].createClass({
                     width: size, height: size, xmlns: 'http://www.w3.org/svg/2000',
                     onMouseEnter: this.onMouseEnter, onMouseLeave: this.onMouseLeave
                 },
-                _react2['default'].createElement(
-                    'g',
-                    { transform: 'translate(' + originX + ', ' + originY + ') rotate(' + circleRotation + ', 0, 0)' },
-                    _react2['default'].createElement('circle', {
-                        fill: 'none', stroke: color, strokeWidth: thickness, r: radius,
-                        style: { strokeDasharray: circumference, strokeDashoffset: '' + circleDashOffset }
-                    })
-                ),
+                circle,
                 _react2['default'].createElement(
                     'g',
                     { transform: 'translate(' + originX + ', ' + originY + ') rotate(' + crossRotation + ', 0, 0)' },
@@ -20721,7 +21209,11 @@ var _PlusButtonJsx = require('./PlusButton.jsx');
 
 exports.PlusButton = _interopRequire(_PlusButtonJsx);
 
-},{"./BackButton.jsx":"/Users/benitte/projects/react-svg-buttons/src/BackButton.jsx","./PlusButton.jsx":"/Users/benitte/projects/react-svg-buttons/src/PlusButton.jsx"}],"/Users/benitte/projects/react-svg-buttons/src/pathHelper.js":[function(require,module,exports){
+var _NavButtonJsx = require('./NavButton.jsx');
+
+exports.NavButton = _interopRequire(_NavButtonJsx);
+
+},{"./BackButton.jsx":"/Users/benitte/projects/react-svg-buttons/src/BackButton.jsx","./NavButton.jsx":"/Users/benitte/projects/react-svg-buttons/src/NavButton.jsx","./PlusButton.jsx":"/Users/benitte/projects/react-svg-buttons/src/PlusButton.jsx"}],"/Users/benitte/projects/react-svg-buttons/src/pathHelper.js":[function(require,module,exports){
 /*
  * This file is part of react-svg-buttons.
  *
