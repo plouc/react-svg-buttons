@@ -13,7 +13,7 @@ body {
     font-family: 'Open Sans', sans-serif;
     font-size: 16px;
     margin: 0;
-    padding: 80px 0;
+    padding: 80px 20px;
 }
 h1, h2, h3 {
     font-weight: 100;
@@ -23,7 +23,6 @@ a {
     text-decoration: none;
 }
 #examples {
-    margin: 20px;
 }
 .header,
 .footer {
@@ -61,4 +60,39 @@ a {
 .footer {
     bottom: 0;
     text-align: right;
+}
+.section:before, .section:after {
+    content: '';
+    display: table;
+}
+.section:after {
+    clear: both;
+}
+.unit {
+    float: left;
+    text-align: center;
+    margin-left: 10px;
+    margin-bottom: 20px;
+}
+.unit:first-child {
+    margin-left: 0;
+}
+.preview {
+    height: 80px;
+    line-height: 80px;
+}
+svg {
+    cursor: pointer;
+    vertical-align: middle;
+}
+pre {
+    margin: 0;
+    text-align: left;
+    padding: 7px 12px;
+    font-size: 14px;
+    line-height: 18px;
+    font-family: consolas, menlo, monaco, monospace;
+    white-space: pre;
+    background: #000;
+    color: #fff;
 }

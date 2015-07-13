@@ -8,3 +8,4 @@
  */
 export { default as BackButton } from './BackButton.jsx';
 export { default as PlusButton } from './PlusButton.jsx';
+export { default as NavButton  } from './NavButton.jsx';

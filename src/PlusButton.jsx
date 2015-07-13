@@ -32,7 +32,8 @@ export default React.createClass({
         size:               PropTypes.number.isRequired,
         thickness:          PropTypes.number.isRequired,
         color:              PropTypes.string.isRequired,
-        transitionDuration: PropTypes.number.isRequired
+        transitionDuration: PropTypes.number.isRequired,
+        outline:            PropTypes.bool.isRequired
     },
 
     mixins: [tweenState.Mixin],
@@ -42,7 +43,8 @@ export default React.createClass({
             size:               52,
             thickness:          2,
             color:              '#000',
-            transitionDuration: 1600
+            transitionDuration: 1600,
+            outline:            true
         };
     },
 
@@ -75,7 +77,7 @@ export default React.createClass({
     },
 
     render() {
-        let { size, thickness, color } = this.props;
+        let { size, thickness, color, outline } = this.props;
 
         let originX       = size / 2;
         let originY       = size / 2;
@@ -115,18 +117,25 @@ export default React.createClass({
             );
         });
 
+        let circle = null;
+        if (outline === true) {
+            circle = (
+                <g transform={`translate(${ originX }, ${ originY }) rotate(${ circleRotation }, 0, 0)`}>
+                    <circle
+                        fill="none" stroke={color} strokeWidth={thickness} r={radius}
+                        style={{ strokeDasharray: circumference, strokeDashoffset: `${ circleDashOffset }`}}
+                    />
+                </g>
+            );
+        }
+
         return (
             <span className="plus_button">
                 <svg
                     width={size} height={size} xmlns="http://www.w3.org/svg/2000"
                     onMouseEnter={this.onMouseEnter} onMouseLeave={this.onMouseLeave}
                 >
-                    <g transform={`translate(${ originX }, ${ originY }) rotate(${ circleRotation }, 0, 0)`}>
-                        <circle
-                            fill="none" stroke={color} strokeWidth={thickness} r={radius}
-                            style={{ strokeDasharray: circumference, strokeDashoffset: `${ circleDashOffset }`}}
-                        />
-                    </g>
+                    {circle}
                     <g transform={`translate(${ originX }, ${ originY }) rotate(${ crossRotation }, 0, 0)`}>
                         <path fill="none" stroke={color} strokeWidth={thickness} d={leftPathLine} />
                         <path fill="none" stroke={color} strokeWidth={thickness} d={rightPathLine} />

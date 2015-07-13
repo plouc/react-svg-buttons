@@ -1,7 +1,7 @@
 {
   "name": "react-svg-buttons",
   "description": "Configurable animated SVG buttons for react",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "main": "lib",
   "author": {
     "name": "Raphaël Benitte"
