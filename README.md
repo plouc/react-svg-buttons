@@ -17,7 +17,7 @@ npm install --save react-svg-buttons
 
 ```javascript
 import { React }                             from 'react';
-import { BackButton, PlusButton, NavButton } from 'react-svg-buttons`;
+import { BackButton, PlusButton, NavButton } from 'react-svg-buttons';
 
 const Test = React.createClass({
     displayName: 'Test',
