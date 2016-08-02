@@ -23,7 +23,7 @@
     "start": "NODE_ENV=development node dev-server.js",
     "build": "rm -rf lib/* && babel src --no-comments --out-dir lib",
     "build-demo": "NODE_ENV=production webpack",
-    "publish-demo": "npm run build-demo && gh-pages -d demo",
+    "publish-demo": "npm run build-demo && gh-pages -d demo-build",
     "prepublish": "npm run build"
   },
   "dependencies": {
