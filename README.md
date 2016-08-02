@@ -2,9 +2,14 @@
 
 [![Version][npm-image]][npm-url]
 
+This package provides a `<MorphIcon />` component used to compose available buttons,
+it's able to morph from whatever icon type to another one.
+  
+The `<MorphIcon />` component exposes 18 icon types.
 
-This package contains a small set of animated svg icons to be used as button.
-Take a look at the [demo](http://plouc.github.io/react-svg-buttons/).
+It also provides a set of button components.
+
+Please, take a look at the [demo](http://plouc.github.io/react-svg-buttons/).
 
 
 ## Installation
@@ -16,23 +21,24 @@ npm install --save react-svg-buttons
 ## Usage
 
 ```javascript
-import { React }                             from 'react';
-import { BackButton, PlusButton, NavButton } from 'react-svg-buttons';
+import { render } from 'react-dom'
+import {
+    MorphIcon,
+    CloseButton,
+    NavButton,
+    PlusButton,
+} from 'react-svg-buttons'
 
-const Test = React.createClass({
-    displayName: 'Test',
-    render() {
-        return (
-            <div>
-                <BackButton/>
-                <PlusButton/>
-                <NavButton/>
-            </div>
-        );
-    }
-});
+const Demo = () => (
+    <div>
+        <MorphIcon type="thunderbolt" />
+        <CloseButton />
+        <NavButton direction="right" opened={false} />
+        <PlusButton />
+    </div>
+)
 
-React.render(<Test/>, document.getElementById('test'));
+render(<Demo />, document.getElementById('demo'))
 ```
 
 ## License
