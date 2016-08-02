@@ -20,10 +20,11 @@
     "url": "https://github.com/plouc/react-svg-buttons/issues"
   },
   "scripts": {
-    "start": "NODE_ENV=development node devServer.js",
+    "start": "NODE_ENV=development node dev-server.js",
+    "build": "rm -rf lib/* && babel src --no-comments --out-dir lib",
     "build-demo": "NODE_ENV=production webpack",
     "publish-demo": "npm run build-demo && gh-pages -d demo",
-    "prepublish": "exit 1"
+    "prepublish": "npm run build"
   },
   "dependencies": {
     "react-motion": "0.4.4"
@@ -31,6 +32,7 @@
   "devDependencies": {
     "autoprefixer": "6.3.7",
     "babel": "6.5.2",
+    "babel-cli": "6.11.4",
     "babel-core": "6.11.4",
     "babel-loader": "6.2.4",
     "babel-preset-es2015": "6.9.0",

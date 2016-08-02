@@ -9,14 +9,14 @@
 import React, { Component } from 'react'
 import { render }           from 'react-dom'
 import _                    from 'lodash'
-import AutoMorphIcon        from './components/AutoMorphIcon'
-import iconTypes            from './icon-types'
+import AutoMorphIcon        from './AutoMorphIcon'
+import iconTypes            from '../src/icon-types'
 import {
     MorphIcon,
     CloseButton,
     PlusButton,
     NavButton,
-} from './index'
+} from '../src'
 
 import './css/index.css'
 

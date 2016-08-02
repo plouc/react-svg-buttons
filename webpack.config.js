@@ -17,8 +17,9 @@ const ExtractTextPlugin  = require('extract-text-webpack-plugin')
 const CleanPlugin        = require('clean-webpack-plugin')
 
 
-const BUILD_DIR         = path.resolve(__dirname, 'demo')
-const APP_DIR           = path.resolve(__dirname, 'src')
+const SRC_DIR            = path.resolve(__dirname, 'src')
+const DEMO_DIR           = path.resolve(__dirname, 'demo')
+const BUILD_DIR          = path.resolve(__dirname, 'demo-build')
 
 
 const config = {
@@ -26,12 +27,12 @@ const config = {
         path:     BUILD_DIR,
         filename: '[name]-[hash:8].js',
     },
-    module : {
+    module: {
         loaders: [
             {
                 test:    /\.js$/,
                 exclude: /node_modules/,
-                include: APP_DIR,
+                include: [SRC_DIR, DEMO_DIR],
             },
             {
                 test:    /\.css$/,
@@ -41,7 +42,7 @@ const config = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: 'src/index.html',
+            template: path.join(DEMO_DIR, 'index.html'),
             title:    'react-svg-buttons',
         }),
         new CleanPlugin(BUILD_DIR),
@@ -58,7 +59,7 @@ const config = {
 
 if (process.env.NODE_ENV === 'production') {
     config.devtool = 'cheap-module-source-map'
-    config.entry = `${APP_DIR}/app`
+    config.entry = path.join(DEMO_DIR, 'app')
     config.module.loaders[0].loaders = ['babel']
     config.module.loaders[1].loader  = ExtractTextPlugin.extract('style', 'css!postcss')
     config.plugins.push(new ExtractTextPlugin('[name]-[id]-[contenthash:8].css', { allChunks: true }))
@@ -72,7 +73,7 @@ if (process.env.NODE_ENV === 'production') {
     config.entry = [
         'webpack-dev-server/client?http://localhost:8081',
         'webpack/hot/only-dev-server',
-        `${APP_DIR}/app`,
+        path.join(DEMO_DIR, 'app'),
     ]
     config.module.loaders[0].loaders = ['react-hot', 'babel?cacheDirectory']
     config.module.loaders[1].loaders = ['style', 'css', 'postcss']
