@@ -22,7 +22,7 @@
   "scripts": {
     "start": "NODE_ENV=development node devServer.js",
     "build-demo": "NODE_ENV=production webpack",
-    "publish-demo": "npm run build-demo && node publish-demo",
+    "publish-demo": "npm run build-demo && gh-pages -d demo",
     "prepublish": "exit 1"
   },
   "dependencies": {
