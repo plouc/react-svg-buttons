@@ -1,6 +1,7 @@
 .idea
 node_modules
-examples/dist
-lib
+demo-build
+/lib
 .publish
 .DS_Store
+npm-debug*

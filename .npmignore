@@ -1,6 +1,8 @@
-examples
+demo
+demo-build
 src
-gulp
-gulpfile.js
+dev-server.js
+webpack.config.js
 .publish
 .idea
+.babelrc
