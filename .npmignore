@@ -1,6 +1,6 @@
-examples
+demo
 src
-gulp
-gulpfile.js
+devServer.js
+webpack.config.js
 .publish
 .idea

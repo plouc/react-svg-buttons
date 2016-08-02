@@ -1,0 +1,13 @@
+/*
+ * This file is part of react-svg-buttons.
+ *
+ * (c) Raphaël Benitte
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+@custom-media --huge screen and (min-width: 1600px);
+@custom-media --large screen and (min-width: 1200px) and (max-width: 1599px);
+@custom-media --medium screen and (min-width: 800px) and (max-width: 1199px);
+@custom-media --small screen and (min-width: 600px) and (max-width: 799px);
+@custom-media --xsmall screen and (max-width: 599px);

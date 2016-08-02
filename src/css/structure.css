@@ -1,0 +1,48 @@
+/*
+ * This file is part of react-svg-buttons.
+ *
+ * (c) Raphaël Benitte
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+.strata {
+    width: 100%;
+}
+
+.strata_content {
+    margin: 0 auto;
+    position: relative;
+    width: 100%;
+}
+
+@media (--huge) {
+    .strata_content {
+        width: 80%;
+    }
+}
+@media (--large) {
+    .strata_content {
+        width: 80%;
+    }
+}
+
+@media (--medium) {
+    .strata_content {
+        width: 90%;
+    }
+}
+
+@media (--small) {
+    .strata_content {
+        padding-left:  30px;
+        padding-right: 30px;
+    }
+}
+
+@media (--xsmall) {
+    .strata_content {
+        padding-left:  15px;
+        padding-right: 15px;
+    }
+}
