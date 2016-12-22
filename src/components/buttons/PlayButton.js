@@ -35,9 +35,9 @@ class PlayButton extends Component {
 
         let type
         if (hover) {
-            type = isPlaying ? 'playSparks' : 'pauseSparks'
+            type = isPlaying ? 'pauseSparks' : 'playSparks'
         } else {
-            type = isPlaying ? 'play' : 'pause'
+            type = isPlaying ? 'pause' : 'play'
             if (circle) {
                 type = `${type}Circle`
             }
@@ -45,7 +45,7 @@ class PlayButton extends Component {
 
         return (
             <MorphIcon
-                {...omit(this.props, ['direction', 'opened'])}
+                {...omit(this.props, ['isPlaying', 'circle'])}
                 onMouseEnter={this.handleMouseEnter}
                 onMouseLeave={this.handleMouseLeave}
                 type={type}
