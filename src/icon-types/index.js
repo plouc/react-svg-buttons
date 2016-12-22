@@ -24,6 +24,12 @@ import inbox       from './inbox'
 import plus        from './plus'
 import plusSparks  from './plus-sparks'
 import thunderbolt from './thunderbolt'
+import play        from './play'
+import playSparks  from './play-sparks'
+import playCircle  from './play-circle'
+import pause       from './pause'
+import pauseSparks from './pause-sparks'
+import pauseCircle from './pause-circle'
 
 
 export default {
@@ -45,4 +51,10 @@ export default {
     plus,
     plusSparks,
     thunderbolt,
+    play,
+    playSparks,
+    playCircle,
+    pause,
+    pauseSparks,
+    pauseCircle,
 }

@@ -9,7 +9,16 @@
 import React, { Component, PropTypes } from 'react'
 
 
-class AutoMorphIcon extends Component {
+export default class AutoMorphIcon extends Component {
+    static propTypes = {
+        types:    PropTypes.array.isRequired,
+        interval: PropTypes.number.isRequired,
+    }
+
+    static defaultProps = {
+        interval: 1000,
+    }
+
     constructor(props) {
         super(props)
 
@@ -33,15 +42,3 @@ class AutoMorphIcon extends Component {
         return React.cloneElement(children, { type: types[step] })
     }
 }
-
-AutoMorphIcon.propTypes = {
-    types:    PropTypes.array.isRequired,
-    interval: PropTypes.number.isRequired,
-}
-
-AutoMorphIcon.defaultProps = {
-    interval: 1000,
-}
-
-
-export default AutoMorphIcon

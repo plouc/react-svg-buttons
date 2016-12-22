@@ -140,7 +140,7 @@ pre {
     margin-left: 10px;
 }
 
-@media (--huge) {
+@media screen and (min-width: var(--huge-min-width)) {
     .examples_item {
         width: 30%;
         margin-right: 5%;
@@ -149,7 +149,7 @@ pre {
         margin-right: 0;
     }
 }
-@media (--large) {
+@media screen and (min-width: var(--large-min-width)) and (max-width: var(--large-max-width)) {
     .examples_item {
         width: 48%;
         margin-right: 4%;
@@ -158,7 +158,7 @@ pre {
         margin-right: 0;
     }
 }
-@media (--medium) {
+@media screen and (min-width: var(--medium-min-width)) and (max-width: var(--medium-max-width)) {
     .examples_item {
         width: 48%;
         margin-right: 4%;
@@ -167,13 +167,13 @@ pre {
         margin-right: 0;
     }
 }
-@media (--small) {
+@media screen and (min-width: var(--small-min-width)) and (max-width: var(--small-max-width)) {
     .examples_item {
         width: 100%;
         margin-right: 0;
     }
 }
-@media (--xsmall) {
+@media screen and (max-width: var(--xsmall-max-width)) {
     .examples_item {
         width: 100%;
         margin-right: 0;

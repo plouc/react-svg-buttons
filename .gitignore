@@ -5,3 +5,4 @@ demo-build
 .publish
 .DS_Store
 npm-debug*
+/demo/build

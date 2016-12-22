@@ -16,31 +16,31 @@
     width: 100%;
 }
 
-@media (--huge) {
+@media screen and (min-width: var(--huge-min-width)) {
     .strata_content {
         width: 80%;
     }
 }
-@media (--large) {
+@media screen and (min-width: var(--large-min-width)) and (max-width: var(--large-max-width)) {
     .strata_content {
         width: 80%;
     }
 }
 
-@media (--medium) {
+@media screen and (min-width: var(--medium-min-width)) and (max-width: var(--medium-max-width)) {
     .strata_content {
         width: 90%;
     }
 }
 
-@media (--small) {
+@media screen and (min-width: var(--small-min-width)) and (max-width: var(--small-max-width)) {
     .strata_content {
         padding-left:  30px;
         padding-right: 30px;
     }
 }
 
-@media (--xsmall) {
+@media screen and (max-width: var(--xsmall-max-width)) {
     .strata_content {
         padding-left:  15px;
         padding-right: 15px;

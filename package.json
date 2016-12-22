@@ -1,7 +1,7 @@
 {
   "name": "react-svg-buttons",
   "description": "Configurable animated SVG buttons for react",
-  "version": "0.2.3",
+  "version": "0.2.5",
   "main": "lib",
   "author": {
     "name": "Raphaël Benitte"
@@ -20,43 +20,23 @@
     "url": "https://github.com/plouc/react-svg-buttons/issues"
   },
   "scripts": {
-    "start": "NODE_ENV=development node dev-server.js",
-    "build": "rm -rf lib/* && babel src --no-comments --out-dir lib",
-    "build-demo": "NODE_ENV=production webpack",
-    "publish-demo": "npm run build-demo && gh-pages -d demo-build",
+    "build": "NODE_ENV=production rm -rf lib/* && babel src --no-comments --out-dir lib",
+    "watch": "NODE_ENV=development babel src --out-dir lib --watch",
     "prepublish": "npm run build"
   },
   "dependencies": {
-    "react-motion": "0.4.4"
+    "react-motion": "^0.4.7"
   },
   "devDependencies": {
-    "autoprefixer": "6.3.7",
-    "babel": "6.5.2",
     "babel-cli": "6.11.4",
     "babel-core": "6.11.4",
-    "babel-loader": "6.2.4",
     "babel-preset-es2015": "6.9.0",
     "babel-preset-react": "6.11.1",
-    "babel-preset-react-hmre": "1.1.1",
     "babel-preset-stage-2": "6.11.0",
-    "clean-webpack-plugin": "0.1.10",
-    "css-loader": "0.23.1",
-    "extract-text-webpack-plugin": "1.0.1",
-    "gh-pages": "0.11.0",
-    "html-webpack-plugin": "2.22.0",
-    "lodash": "4.14.1",
-    "postcss-custom-media": "5.0.1",
-    "postcss-custom-properties": "5.0.1",
-    "postcss-import": "8.1.2",
-    "postcss-loader": "0.9.1",
-    "react-dom": ">=15.0.0",
-    "react-hot-loader": "1.3.0",
-    "style-loader": "0.13.1",
-    "webpack": "1.13.1",
-    "webpack-dev-server": "1.14.1"
+    "react": "^15.4.1"
   },
   "peerDependencies": {
-    "react": ">=15.0.0"
+    "react": "^15.4.1"
   },
   "keywords": [
     "react",

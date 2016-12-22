@@ -14,7 +14,7 @@
     text-align: center;
 }
 
-@media (--huge) {
+@media screen and (min-width: var(--huge-min-width)) {
     .playground_settings,
     .playground_preview,
     .playground_code {
@@ -26,7 +26,7 @@
     }
 }
 
-@media (--large) {
+@media screen and (min-width: var(--large-min-width)) and (max-width: var(--large-max-width)) {
     .playground_settings,
     .playground_preview,
     .playground_code {
@@ -38,7 +38,7 @@
     }
 }
 
-@media (--medium) {
+@media screen and (min-width: var(--medium-min-width)) and (max-width: var(--medium-max-width)) {
     .playground_settings,
     .playground_code {
         width: 48%;
@@ -57,7 +57,7 @@
     }
 }
 
-@media (--small) {
+@media screen and (min-width: var(--small-min-width)) and (max-width: var(--small-max-width)) {
     .playground_settings,
     .playground_preview,
     .playground_code {
@@ -67,7 +67,7 @@
 }
 
 
-@media (--xsmall) {
+@media screen and (max-width: var(--xsmall-max-width)) {
     .playground_settings,
     .playground_preview,
     .playground_code {

@@ -7,24 +7,22 @@
  * file that was distributed with this source code.
  */
 import React, { Component } from 'react'
-import { render }           from 'react-dom'
 import _                    from 'lodash'
 import AutoMorphIcon        from './AutoMorphIcon'
-import iconTypes            from '../src/icon-types'
 import {
+    iconTypes,
     MorphIcon,
     CloseButton,
     PlusButton,
     NavButton,
-} from '../src'
-
-import './css/index.css'
+    PlayButton,
+} from '../../lib'
 
 
 const types = Object.keys(iconTypes)
 
 
-class App extends Component {
+export default class App extends Component {
     constructor(props) {
         super(props)
 
@@ -44,8 +42,8 @@ class App extends Component {
         } = this.state
 
         const morphIconProps = {
-            size:      parseInt(size),
-            thickness: parseInt(thickness),
+            size:      Number(size),
+            thickness: Number(thickness),
             color:     color,
             type,
         }
@@ -115,6 +113,23 @@ class App extends Component {
                                 />
                                 <pre>{`<NavButton direction="down" opened={${navButtonOpened ? 'true' : 'false'}} />`}</pre>
                             </div>
+                            <div className="examples_item">
+                                <PlayButton
+                                    color="#dd6e78"
+                                    isPlaying={navButtonOpened}
+                                    onClick={() => { this.setState({ navButtonOpened: !navButtonOpened })}}
+                                />
+                                <pre>{`<PlayButton isPlaying={${navButtonOpened ? 'true' : 'false'}} circle={false} />`}</pre>
+                            </div>
+                            <div className="examples_item">
+                                <PlayButton
+                                    color="#dd6e78"
+                                    isPlaying={navButtonOpened}
+                                    circle={true}
+                                    onClick={() => { this.setState({ navButtonOpened: !navButtonOpened })}}
+                                />
+                                <pre>{`<PlayButton isPlaying={${navButtonOpened ? 'true' : 'false'}} circle={true} />`}</pre>
+                            </div>
                         </div>
                         <div className="playground">
                             <div className="playground_settings">
@@ -181,6 +196,3 @@ class App extends Component {
         )
     }
 }
-
-
-render(<App />, document.getElementById('app'))
