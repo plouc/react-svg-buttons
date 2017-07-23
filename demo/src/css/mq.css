@@ -6,3 +6,119 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
+@media screen and (min-width: 1600px) {
+    .strata_content {
+        width: 80%;
+    }
+
+    .examples_item {
+        width: 30%;
+        margin-right: 5%;
+    }
+    .examples_item:nth-child(3n) {
+        margin-right: 0;
+    }
+
+    .playground_settings,
+    .playground_preview,
+    .playground_code {
+        width: 32%;
+        margin-left: 2%;
+    }
+    .playground_settings {
+        margin-left: 0;
+    }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1599px) {
+    .strata_content {
+        width: 80%;
+    }
+
+    .examples_item {
+        width: 48%;
+        margin-right: 4%;
+    }
+    .examples_item:nth-child(2n) {
+        margin-right: 0;
+    }
+
+    .playground_settings,
+    .playground_preview,
+    .playground_code {
+        width: 32%;
+        margin-left: 2%;
+    }
+    .playground_settings {
+        margin-left: 0;
+    }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1199px) {
+    .strata_content {
+        width: 90%;
+    }
+
+    .examples_item {
+        width: 48%;
+        margin-right: 4%;
+    }
+    .examples_item:nth-child(2n) {
+        margin-right: 0;
+    }
+
+    .playground_settings,
+    .playground_code {
+        width: 48%;
+        margin-left: 4%;
+    }
+    .playground_settings {
+        margin-left: 0;
+        order: 1;
+    }
+    .playground_code {
+        order: 2;
+    }
+    .playground_preview {
+        order: 3;
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 600px) and (max-width: 799px) {
+    .strata_content {
+        padding-left:  30px;
+        padding-right: 30px;
+    }
+
+    .examples_item {
+        width: 100%;
+        margin-right: 0;
+    }
+
+    .playground_settings,
+    .playground_preview,
+    .playground_code {
+        width: 100%;
+        margin-left: 0;
+    }
+}
+
+@media screen and (max-width: 599px) {
+    .strata_content {
+        padding-left:  15px;
+        padding-right: 15px;
+    }
+
+    .examples_item {
+        width: 100%;
+        margin-right: 0;
+    }
+
+    .playground_settings,
+    .playground_preview,
+    .playground_code {
+        width: 100%;
+        margin-left: 0;
+    }
+}

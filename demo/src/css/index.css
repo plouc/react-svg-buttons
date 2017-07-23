@@ -7,7 +7,6 @@
  * file that was distributed with this source code.
  */
 @import "variables.css";
-@import "mq.css";
 @import "helpers.css";
 @import "structure.css";
 @import "select.css";
@@ -132,50 +131,12 @@ pre {
     align-items: center;
     margin-bottom: 15px;
 }
-.examples_item pre {
+.examples_item__code {
     padding: 9px 12px;
     font-size: 14px;
     line-height: 1em;
-    flex-grow: 1;
-    margin-left: 10px;
+    flex: 1;
+    margin-left: 15px;
 }
 
-@media screen and (min-width: var(--huge-min-width)) {
-    .examples_item {
-        width: 30%;
-        margin-right: 5%;
-    }
-    .examples_item:nth-child(3n) {
-        margin-right: 0;
-    }
-}
-@media screen and (min-width: var(--large-min-width)) and (max-width: var(--large-max-width)) {
-    .examples_item {
-        width: 48%;
-        margin-right: 4%;
-    }
-    .examples_item:nth-child(2n) {
-        margin-right: 0;
-    }
-}
-@media screen and (min-width: var(--medium-min-width)) and (max-width: var(--medium-max-width)) {
-    .examples_item {
-        width: 48%;
-        margin-right: 4%;
-    }
-    .examples_item:nth-child(2n) {
-        margin-right: 0;
-    }
-}
-@media screen and (min-width: var(--small-min-width)) and (max-width: var(--small-max-width)) {
-    .examples_item {
-        width: 100%;
-        margin-right: 0;
-    }
-}
-@media screen and (max-width: var(--xsmall-max-width)) {
-    .examples_item {
-        width: 100%;
-        margin-right: 0;
-    }
-}
+@import "mq.css";

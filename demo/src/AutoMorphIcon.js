@@ -6,12 +6,12 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-import React, { Component, PropTypes } from 'react'
-
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 
 export default class AutoMorphIcon extends Component {
     static propTypes = {
-        types:    PropTypes.array.isRequired,
+        types: PropTypes.array.isRequired,
         interval: PropTypes.number.isRequired,
     }
 
@@ -31,13 +31,13 @@ export default class AutoMorphIcon extends Component {
         setInterval(() => {
             const { step } = this.state
 
-            this.setState({ step: step < (types.length - 1) ? step + 1 : 0 })
+            this.setState({ step: step < types.length - 1 ? step + 1 : 0 })
         }, interval)
     }
 
     render() {
         const { children, types } = this.props
-        const { step }            = this.state
+        const { step } = this.state
 
         return React.cloneElement(children, { type: types[step] })
     }

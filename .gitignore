@@ -6,3 +6,4 @@ demo-build
 .DS_Store
 npm-debug*
 /demo/build
+/demo/src/lib

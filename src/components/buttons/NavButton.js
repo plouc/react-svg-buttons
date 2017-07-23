@@ -6,10 +6,10 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-import React, { Component, PropTypes } from 'react'
-import MorphIcon                       from '../MorphIcon'
-import omit                            from '../../lib/omit'
-
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+import MorphIcon from '../MorphIcon'
+import omit from '../../lib/omit'
 
 class NavButton extends Component {
     constructor(props) {
@@ -31,7 +31,7 @@ class NavButton extends Component {
 
     render() {
         const { direction, opened } = this.props
-        const { hover }             = this.state
+        const { hover } = this.state
 
         let type
         if (hover) {
@@ -69,13 +69,12 @@ class NavButton extends Component {
 
 NavButton.propTypes = {
     direction: PropTypes.oneOf(['up', 'right', 'down', 'left']),
-    opened:    PropTypes.bool.isRequired,
+    opened: PropTypes.bool.isRequired,
 }
 
 NavButton.defaultProps = {
     direction: 'down',
-    opened:    false,
+    opened: false,
 }
-
 
 export default NavButton

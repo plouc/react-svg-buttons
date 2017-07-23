@@ -6,10 +6,10 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-import React, { Component, PropTypes } from 'react'
-import MorphIcon                       from '../MorphIcon'
-import omit                            from '../../lib/omit'
-
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+import MorphIcon from '../MorphIcon'
+import omit from '../../lib/omit'
 
 class PlayButton extends Component {
     constructor(props) {
@@ -31,7 +31,7 @@ class PlayButton extends Component {
 
     render() {
         const { isPlaying, circle } = this.props
-        const { hover }             = this.state
+        const { hover } = this.state
 
         let type
         if (hover) {
@@ -56,13 +56,12 @@ class PlayButton extends Component {
 
 PlayButton.propTypes = {
     isPlaying: PropTypes.bool.isRequired,
-    circle:    PropTypes.bool.isRequired,
+    circle: PropTypes.bool.isRequired,
 }
 
 PlayButton.defaultProps = {
     isPlaying: false,
-    circle:    false,
+    circle: false,
 }
-
 
 export default PlayButton
