@@ -16,7 +16,7 @@ import {
     PlusButton,
     NavButton,
     PlayButton,
-} from './lib'
+} from '../../src/lib'
 
 const types = Object.keys(iconTypes)
 
